@@ -128,11 +128,66 @@
                         <p>123 Business Street<br>City, State 12345</p>
                     </div>
                 </div>
-                <form class="contact-form">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <textarea placeholder="Your Message" rows="5" required></textarea>
-                    <button type="submit" class="btn-primary">Send Message</button>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="fullName" name="fullName" required>
+                        <label for="fullName">Full Name *</label>
+                        <span class="form-error"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required>
+                        <label for="email">Email Address *</label>
+                        <span class="form-error"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone">
+                        <label for="phone">Phone Number</label>
+                        <span class="form-error"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="text" id="company" name="company">
+                        <label for="company">Company/Organization</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject *</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="web-development">Web Development</option>
+                            <option value="mobile-apps">Mobile Applications</option>
+                            <option value="cloud-solutions">Cloud Solutions</option>
+                            <option value="consultation">Free Consultation</option>
+                            <option value="support">Technical Support</option>
+                        </select>
+                        <label for="subject">Subject</label>
+                        <span class="form-error"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" required maxlength="500"></textarea>
+                        <label for="message">Your Message *</label>
+                        <span class="char-counter">0/500 characters</span>
+                        <span class="form-error"></span>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary submit-btn">
+                        <span class="btn-text">Send Message</span>
+                        <span class="btn-loading">
+                            <svg class="spinner" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none" stroke-dasharray="60" stroke-dashoffset="60"></circle>
+                            </svg>
+                            Sending...
+                        </span>
+                    </button>
+                    
+                    <div class="form-success" id="formSuccess">
+                        <div class="success-icon">✓</div>
+                        <h4>Message Sent Successfully!</h4>
+                        <p>Thank you for reaching out. We'll get back to you within 24 hours.</p>
+                    </div>
                 </form>
             </div>
         </div>
